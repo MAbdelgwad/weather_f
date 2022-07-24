@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Being the root element of the AndroidManifest.xml file, the manifest has the package attribute to describe the package name of the activity class.-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cz.eng.weather">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!--Being the subelement of the manifest, the application includes the namespace declaration and also contains several subelements to declare the application component such as activity.
+     The icon, label, theme are the commonly used attributes of the application element.-->
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <activity
+            android:name="cz.eng.weather.activities.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <!--Being the sub-element of activity, the intent-filter specifies the type of intent to which activity, service or broadcast receiver can respond to.-->
+            <intent-filter>
+                <!--The action attribute is used to add an action for the intent-filter. Thus, it is a must for the intent-filter to have at least one active element.-->
+                <action android:name="android.intent.action.MAIN" />
+                <!--The category attribute is used to add a category name to an intent-filter.-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="cz.eng.weather.activities.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name="cz.eng.weather.activities.SettingsActivity"
+            android:parentActivityName="cz.eng.weather.activities.MainActivity"
+            android:theme="@style/AppTheme"
+            tools:ignore="UnusedAttribute" />
+
+        <activity
+            android:name="cz.eng.weather.activities.GraphActivity"
+            android:label="@string/action_graphs"
+            android:parentActivityName="cz.eng.weather.activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="UnusedAttribute" />
+
+
+        <!-- Receivers -->
+
+        <receiver android:name="cz.eng.weather.widgets.ExtensiveWidgetProvider" android:label="@string/widget_label_extensive">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/extensive_widget" />
+        </receiver>
+
+        <receiver android:name="cz.eng.weather.widgets.TimeWidgetProvider" android:label="@string/widget_label_time">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/time_widget" />
+        </receiver>
+
+        <receiver android:name="cz.eng.weather.widgets.SimpleWidgetProvider" android:label="@string/widget_label_simple">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/simple_widget" />
+        </receiver>
+
+        <receiver android:name="cz.eng.weather.widgets.ClassicTimeWidgetProvider" android:label="@string/widget_label_classic">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/time_widget_classic" />
+        </receiver>
+
+        <receiver android:name="cz.eng.weather.AlarmReceiver">
+            <intent-filter>
+                <!--BOOT_COMPLETED when u oben app-->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+
+        <!-- Services -->
+
+        <service android:name="cz.eng.weather.notifications.WeatherNotificationService"
+            android:exported="false"
+            android:description="@string/notification_service_description"/>
+
+    </application>
+</manifest>

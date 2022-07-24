@@ -1,0 +1,47 @@
+<!-- Do not change the order of any strings in here, without discussing first on the "Issues" page -->
+<!-- Do not delete any blank lines -->
+<resources>
+    <!-- Settings/Units -->
+    <string name="settings_title_units">Units</string>
+    <string name="setting_lengthUnits">Length units</string>
+    <string name="setting_speedUnits">Speed units</string>
+    <string name="setting_tempUnits">Temperature units</string>
+    <string name="setting_showTempAsInteger">Show temperature only as an integer</string>
+    <string name="setting_pressureUnits">Pressure units</string>
+    <string name="setting_auto_detect_location">Detect Location</string>
+    <string name="setting_differentiateDaysByTint">Differentiate Days with Color</string>
+
+    <string name="setting_unit_mps" translatable="false">Meters per second (m/s)</string>
+    <string name="setting_unit_kph" translatable="false">Kilometers per hour (kph)</string>
+    <string name="setting_unit_mph" translatable="false">Miles per hour (mph)</string>
+    <string name="setting_unit_bft" translatable="false">Beaufort wind scale (bft)</string>
+    <string name="setting_unit_kn" translatable="false">Knots (kn)</string>
+    <string name="setting_unit_Celsuis" translatable="false">Celsius</string>
+    <string name="setting_unit_Fahrenheit" translatable="false">Fahrenheit</string>
+    <string name="setting_unit_Kelvin" translatable="false">Kelvin</string>
+
+    <string name="setting_unit_mm" translatable="false">Millimeters (mm)</string>
+    <string name="setting_unit_in" translatable="false">Inches (in)</string>
+
+    <string name="setting_unit_hpa" translatable="false">hPa/mBar</string>
+    <string name="setting_unit_kpa" translatable="false">kPa</string>
+    <string name="setting_unit_mmhg" translatable="false">mm Hg</string>
+    <string name="setting_unit_inhg" translatable="false">in Hg</string>
+
+    <string name="speed_unit_mps" translatable="false">m/s</string>
+    <string name="speed_unit_kph" translatable="false">kph</string>
+    <string name="speed_unit_mph" translatable="false">mph</string>
+    <string name="speed_unit_kn" translatable="false">kn</string>
+
+    <string name="pressure_unit_hpa" translatable="false">hPa/mBar</string>
+    <string name="pressure_unit_kpa" translatable="false">kPa</string>
+    <string name="pressure_unit_mmhg" translatable="false">mm Hg</string>
+    <string name="pressure_unit_inhg" translatable="false">in Hg</string>
+
+    <string name="uvi_no_info">No Info</string>
+    <string name="uvi_low">Low</string>
+    <string name="uvi_moderate">Moderate</string>
+    <string name="uvi_high">High</string>
+    <string name="uvi_very_high">Very High</string>
+    <string name="uvi_extreme">Extreme</string>
+</resources>
